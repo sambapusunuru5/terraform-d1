@@ -13,6 +13,7 @@ resource "aws_vpc" "tf_main_vpc" {
 
 # Create a vpc in us-west-1
 resource "aws_vpc" "tf_vpc_new" {
+    //argument 
   cidr_block = "10.2.0.0/16"
   tags = {
     "Name" = "New VPC"
