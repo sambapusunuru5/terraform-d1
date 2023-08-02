@@ -3,6 +3,7 @@ resource "aws_instance" "tf_ec2" {
   ami = "ami-0f34c5ae932e6f0e4"
   instance_type = "t2.micro"
   key_name = "terraform-key"
+  count = 2
   # Want this EC2 in the subnet we created
   subnet_id = aws_subnet.tf_public_subnet_1.id
   vpc_security_group_ids = [aws_security_group.tf_sg_new.id]
@@ -19,6 +20,6 @@ resource "aws_instance" "tf_ec2" {
   # user_data = file("script.sh")
   # chmod +x script.sh
   tags = {
-    "Name" = "webserver"
+    "Name" = "webserver-${count.index}"
   }
 }
