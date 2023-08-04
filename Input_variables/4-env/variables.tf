@@ -12,7 +12,9 @@ variable "zone" {
 }
 
 variable "instance_type" {
-  default = "t2-micro"
+  description = "Instance type that is used for Ec2"
+  type = string
+  default = "t2.micro"
 }
 
 variable "instance_count" {

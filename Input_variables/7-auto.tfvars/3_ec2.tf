@@ -21,6 +21,6 @@ resource "aws_instance" "tf_ec2" {
   # user_data = file("script.sh")
   # chmod +x script.sh
   tags = {
-    "Name" = "webserver-${count.index}"
+    "Name" = "webserver-${count.index}" # [0], [1]
   }
 }

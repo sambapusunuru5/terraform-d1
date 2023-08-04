@@ -6,4 +6,5 @@ resource "aws_iam_user" "tf_for_each_user" {
   name = each.key
   # name = each.value
   # arguments 
+  # each.key=each.value
 }

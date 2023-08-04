@@ -2,7 +2,8 @@
 # Create a Ec2 Machine with custom subnet in the vpc created
 resource "aws_instance" "tf_ec2" {
   ami = var.ami_id
-  instance_type = var.instance_type
+  # instance_type=var.instance_type
+  instance_type = var.instance_type[1]
   key_name = "terraform-key"
   count = var.instance_count
   # Want this EC2 in the subnet we created

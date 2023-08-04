@@ -12,7 +12,9 @@ variable "zone" {
 }
 
 variable "instance_type" {
-  default = "t2-micro"
+  description = "Ec2 machine instance type used"
+  type = list(string)
+  default = ["t2.micro", "t2.small"]
 }
 
 variable "instance_count" {

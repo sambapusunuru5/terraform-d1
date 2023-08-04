@@ -2,7 +2,12 @@
 # Create a Ec2 Machine with custom subnet in the vpc created
 resource "aws_instance" "tf_ec2" {
   ami = var.ami_id
-  instance_type = var.instance_type
+  # instance_type=var.instance_type
+  # for list representation use belo
+  #instance_type = var.instance_type[1]
+
+  # For Map representation use below 
+  instance_type = var.instance_type["stageenv"]
   key_name = "terraform-key"
   count = var.instance_count
   # Want this EC2 in the subnet we created
@@ -20,7 +25,5 @@ resource "aws_instance" "tf_ec2" {
   EOF 
   # user_data = file("script.sh")
   # chmod +x script.sh
-  tags = {
-    "Name" = "webserver-${count.index}"
-  }
+  tags = var.in_tags
 }
