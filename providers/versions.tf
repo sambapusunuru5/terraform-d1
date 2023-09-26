@@ -29,6 +29,6 @@ provider "aws" {
 # Provider other info
 provider "aws" {
   region = "us-west-1"
-  profile = "myprofile"
+  profile = "myprofile"  # we can change this profile name by vim ~/.aws/credentials   create another name and we pass that name in profile
   alias = "aws-west-1"
 }
